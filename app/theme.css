@@ -1,0 +1,95 @@
+/*
+  Theme tokens: the ONLY place colours, type, spacing and layout values are defined.
+  Change the look here; components only reference these names.
+  Source: PLAN.md section 2.
+*/
+
+:root {
+  /* Colour */
+  --bg: #0a0a0f;
+  --surface: #12121a;
+  --surface-2: #1a1a26;
+  --card-bg: transparent; /* project cards; set to var(--surface) for solid cards */
+  --card-edge: transparent; /* card outline at rest; set to var(--border) to always show it */
+  --border: rgba(161, 139, 255, 0.12);
+  --border-strong: rgba(161, 139, 255, 0.24);
+  --text: #e8e6f0;
+  --muted: #9a98ab;
+  --accent: #7c5cff; /* fills and borders only, never small text */
+  --accent-soft: #a18bff; /* all accent-coloured text, including links */
+  --accent-fill: #7854fc; /* filled buttons with white text: a notch darker than --accent so white passes 4.5:1 */
+  --glow: rgba(124, 92, 255, 0.18); /* hero glow only */
+  --logo-tile: #000000; /* black tile behind company logos (most have black backgrounds) */
+
+  /* Type scale (fluid) */
+  --fs-display: clamp(2.75rem, 1.6rem + 5vw, 5.5rem); /* 44 → 88px */
+  --fs-h2: clamp(2rem, 1.55rem + 2vw, 3rem); /* 32 → 48px */
+  --fs-h3: 1.75rem; /* 28px, the Cormorant floor */
+  --fs-body: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem); /* 16 → 17px */
+  --fs-label: 0.75rem; /* 12px */
+  --fs-label-lg: 0.8125rem; /* 13px */
+  --tracking-label: 0.12em;
+
+  /* Spacing (4px base) */
+  --space-1: 0.25rem; /* 4 */
+  --space-2: 0.5rem; /* 8 */
+  --space-3: 0.75rem; /* 12 */
+  --space-4: 1rem; /* 16 */
+  --space-5: 1.5rem; /* 24 */
+  --space-6: 2rem; /* 32 */
+  --space-7: 3rem; /* 48 */
+  --space-8: 4rem; /* 64 */
+  --space-9: 6rem; /* 96 */
+  --space-10: 8rem; /* 128 */
+
+  /* Layout */
+  --content-max: 70rem; /* 1120px */
+  --measure: 68ch;
+  --radius: 6px;
+  --nav-h: 56px;
+  --section-pad: var(--space-8); /* 64px mobile */
+  --card-pad: var(--space-5); /* 24px mobile */
+}
+
+@media (min-width: 768px) {
+  :root {
+    --section-pad: var(--space-9); /* 96px */
+    --card-pad: var(--space-6); /* 32px */
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --section-pad: var(--space-10); /* 128px */
+  }
+}
+
+/* Expose the tokens to Tailwind utilities (bg-surface, text-accent-soft, font-serif, text-display, ...). */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-fill: var(--accent-fill);
+  --color-logo-tile: var(--logo-tile);
+
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
+  --font-slab: var(--font-roboto-slab), "Roboto Slab", Georgia, serif;
+  --font-mono: var(--font-jetbrains), "JetBrains Mono", ui-monospace, monospace;
+
+  --text-display: var(--fs-display);
+  --text-h2: var(--fs-h2);
+  --text-h3: var(--fs-h3);
+  --text-body: var(--fs-body);
+  --text-label: var(--fs-label);
+  --text-label-lg: var(--fs-label-lg);
+
+  --radius-card: var(--radius);
+  --container-content: var(--content-max);
+}

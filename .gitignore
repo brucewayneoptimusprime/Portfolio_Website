@@ -1,0 +1,58 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# python virtualenv (not part of the site)
+.venv/
+
+# local-only files
+.idea/
+portfolio-pack.zip
+output*.md
+.mcp.json
+status_check*.md
+# original project photos (web-sized copies live in public/projects/)
+Project_Photos/
+*.zip
+
+# PDFs: only the public resume is committed
+*.pdf
+!public/resume.pdf
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts

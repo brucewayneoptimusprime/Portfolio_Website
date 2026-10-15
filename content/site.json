@@ -1,0 +1,71 @@
+{
+  "nav": [
+    { "label": "Experience", "href": "#experience" },
+    { "label": "Projects", "href": "#featured", "match": ["featured", "projects"] },
+    { "label": "Skills", "href": "#skills" },
+    { "label": "Recognition", "href": "#recognition" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "sections": {
+    "featured": { "label": "Selected work", "title": "Featured projects" },
+    "experience": { "label": "Where I have worked", "title": "Experience" },
+    "allProjects": { "label": "Every project", "title": "All projects" },
+    "skills": { "label": "Toolkit", "title": "Skills" },
+    "recognition": { "label": "Papers, ranks, certifications", "title": "Research and recognition" },
+    "contact": { "label": "Get in touch", "title": "Contact" }
+  },
+  "project": {
+    "highlightCaption": "At a glance",
+    "pipeline": "Pipeline",
+    "howItWorks": "How it works",
+    "highlights": "Highlights",
+    "stack": "Stack",
+    "enlargeImage": "Enlarge image: {title}",
+    "closeImage": "Close"
+  },
+  "buttons": {
+    "downloadResume": "Download resume",
+    "copyEmail": "Copy email",
+    "copied": "Copied",
+    "copyFailed": "Could not copy. The address is selected, so you can copy it yourself.",
+    "showDetails": "Show details",
+    "hideDetails": "Hide details"
+  },
+  "links": {
+    "demo": "Live demo",
+    "repo": "Code",
+    "repoTitle": "{title}: code on GitHub (opens in new tab)",
+    "video": "Video",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "email": "Email"
+  },
+  "filter": {
+    "label": "Filter projects by tag",
+    "all": "All",
+    "tags": ["AI", "Data", "CV", "Research"],
+    "showing": "Showing {count} projects",
+    "showingOne": "Showing {count} project"
+  },
+  "experience": {
+    "clubs": "Clubs and volunteering"
+  },
+  "recognition": {
+    "allCertifications": "All certifications on LinkedIn"
+  },
+  "skills": {
+    "depthNote": "studied in depth"
+  },
+  "contact": {
+    "howIWork": "How I work",
+    "languages": "Languages"
+  },
+  "a11y": {
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "skipToContent": "Skip to content",
+    "mainNav": "Main",
+    "viewLogo": "View {company} logo",
+    "closeLogo": "Close"
+  }
+}
