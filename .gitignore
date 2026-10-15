@@ -9,6 +9,8 @@ portfolio-pack.zip
 output*.md
 .mcp.json
 status_check*.md
+predeployment*.md
+final_push_file.md
 # original project photos (web-sized copies live in public/projects/)
 Project_Photos/
 *.zip

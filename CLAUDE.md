@@ -59,7 +59,8 @@ The visitor should know who he is within 5 seconds, find his best work within 15
 - No custom domain yet: use the default `*.vercel.app` address.
 
 ## Privacy and repo hygiene
-- Do not put the phone number on the site. The public contact email is adityapersonalusefighttry@gmail.com (also in `content/about.md`).
+- The phone number does not appear anywhere on the site's pages. The public contact email is adityapersonalusefighttry@gmail.com (also in `content/about.md`).
+- The downloadable resume PDF (`public/resume.pdf`) intentionally includes the phone number. That is a deliberate choice, not a bug.
 - Never commit job-application notes, tailored resumes for specific companies, or credentials.
 - The resume PDF for download lives at `public/resume.pdf` (served as `/resume.pdf`).
 
