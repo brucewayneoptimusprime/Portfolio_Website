@@ -82,59 +82,63 @@ export function Nav({ name, items, linkedin, github, labels }: Props) {
   const isActive = (item: NavItem) => !!active && idsFor(item).includes(active);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-bg/90 backdrop-blur-sm">
-      <nav aria-label={labels.mainNav} className="mx-auto flex h-[var(--nav-h)] max-w-content items-center gap-2 px-4 md:px-8">
-        <a href="#top" className="mr-auto flex h-11 items-center font-medium tracking-tight text-text no-underline">
-          {name}
-        </a>
-
-        <ul className="hidden items-center lg:flex">
-          {items.map((item) => (
-            <li key={item.href}>
-              <a
-                href={item.href}
-                aria-current={isActive(item) ? "true" : undefined}
-                className="label flex h-11 items-center px-3 no-underline transition-colors hover:text-text aria-[current=true]:text-accent-soft"
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        <span aria-hidden="true" className="mx-1 hidden h-5 w-px bg-border-strong lg:block" />
-
-        {linkedin && (
-          <a href={linkedin.href} target="_blank" rel="noopener noreferrer" aria-label={linkedin.label} className={iconLink}>
-            <LinkedInIcon className="h-[18px] w-[18px]" />
+    <>
+      <header className="sticky top-0 z-50 border-b border-border bg-bg/90 backdrop-blur-sm">
+        <nav aria-label={labels.mainNav} className="mx-auto flex h-[var(--nav-h)] max-w-content items-center gap-2 px-4 md:px-8">
+          <a href="#top" className="mr-auto flex h-11 items-center font-medium tracking-tight text-text no-underline">
+            {name}
           </a>
-        )}
-        {github && (
-          <a href={github.href} target="_blank" rel="noopener noreferrer" aria-label={github.label} className={iconLink}>
-            <GitHubIcon className="h-[18px] w-[18px]" />
-          </a>
-        )}
 
-        <button
-          ref={buttonRef}
-          type="button"
-          aria-expanded={open}
-          aria-controls="nav-sheet"
-          aria-label={open ? labels.closeMenu : labels.openMenu}
-          onClick={() => setOpen((o) => !o)}
-          className={`${iconLink} lg:hidden`}
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
-            {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
-          </svg>
-        </button>
-      </nav>
+          <ul className="hidden items-center lg:flex">
+            {items.map((item) => (
+              <li key={item.href}>
+                <a
+                  href={item.href}
+                  aria-current={isActive(item) ? "true" : undefined}
+                  className="label flex h-11 items-center px-3 no-underline transition-colors hover:text-text aria-[current=true]:text-accent-soft"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
 
+          <span aria-hidden="true" className="mx-1 hidden h-5 w-px bg-border-strong lg:block" />
+
+          {linkedin && (
+            <a href={linkedin.href} target="_blank" rel="noopener noreferrer" aria-label={linkedin.label} className={iconLink}>
+              <LinkedInIcon className="h-[18px] w-[18px]" />
+            </a>
+          )}
+          {github && (
+            <a href={github.href} target="_blank" rel="noopener noreferrer" aria-label={github.label} className={iconLink}>
+              <GitHubIcon className="h-[18px] w-[18px]" />
+            </a>
+          )}
+
+          <button
+            ref={buttonRef}
+            type="button"
+            aria-expanded={open}
+            aria-controls="nav-sheet"
+            aria-label={open ? labels.closeMenu : labels.openMenu}
+            onClick={() => setOpen((o) => !o)}
+            className={`${iconLink} lg:hidden`}
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
+              {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
+            </svg>
+          </button>
+        </nav>
+      </header>
+
+      {/* The sheet sits outside <header>: the header's backdrop-filter would otherwise become the
+          containing block for this fixed element and squash it to the header's 56px height. */}
       {open && (
         <div
           id="nav-sheet"
           ref={sheetRef}
-          className="fixed inset-x-0 top-[var(--nav-h)] bottom-0 overflow-y-auto bg-bg lg:hidden"
+          className="fixed inset-x-0 top-[var(--nav-h)] bottom-0 z-40 overflow-y-auto overscroll-contain bg-bg lg:hidden"
         >
           <ul className="mx-auto max-w-content px-4 py-4 md:px-8">
             {items.map((item) => (
@@ -152,6 +156,6 @@ export function Nav({ name, items, linkedin, github, labels }: Props) {
           </ul>
         </div>
       )}
-    </header>
+    </>
   );
 }
